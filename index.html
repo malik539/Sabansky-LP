@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-treatment-context="balanced">
+<html lang="en" class="no-js" data-treatment-context="balanced">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -13,6 +13,8 @@
   <meta property="og:image" content="assets/img/invisalign-braces.jpg">
   <link rel="icon" href="assets/img/logo.png" type="image/png">
   <link rel="preload" href="assets/img/logo.png" as="image">
+  <link rel="preload" href="assets/img/invisalign-braces.webp" as="image" type="image/webp">
+  <script>document.documentElement.className = document.documentElement.className.replace("no-js", "js");</script>
   <link rel="stylesheet" href="assets/css/styles.css">
   <script type="application/ld+json">
   {
@@ -50,7 +52,7 @@
   </script>
 </head>
 <body>
-  <a class="skip-link" href="#consult-form">Skip to the consultation form</a>
+  <a class="skip-link" href="#consultation">Skip to the consultation form</a>
 
   <!-- ============================================================
        1. MINIMAL PPC HEADER
@@ -65,7 +67,7 @@
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8Z"/></svg>
           <span class="header-phone-text"><span class="header-phone-label">Call</span> (640) 203-3896</span>
         </a>
-        <a id="header-consultation" class="btn btn-primary btn-sm" href="#consult-form" data-conversion-type="lead" data-scroll-form><span class="hide-sm">Request a&nbsp;</span>Free Consultation</a>
+        <a id="header-consultation" class="btn btn-primary btn-sm" href="#consultation" data-conversion-type="lead" data-open-form><span class="hide-sm">Request a </span>Free Consultation</a>
       </div>
     </div>
   </header>
@@ -102,7 +104,7 @@
           <p class="value-total"><span>Total Savings</span><strong>= $1,025</strong></p>
 
           <div class="cta-row">
-            <a id="hero-offer" class="btn btn-gold btn-lg" href="#consult-form" data-conversion-type="lead" data-scroll-form>Request a Free Consultation</a>
+            <a id="hero-offer" class="btn btn-gold btn-lg" href="#consultation" data-conversion-type="lead" data-open-form>Request a Free Consultation</a>
             <a id="hero-call" class="btn btn-outline btn-lg" href="tel:6402033896" data-conversion-type="phone">
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8Z"/></svg>
               Call (640) 203-3896
@@ -120,102 +122,17 @@
           </div>
         </div>
 
-        <!-- ------------------------------------------------------------
-             14. LEAD FORM (lives in the hero; every CTA scrolls here)
-             ------------------------------------------------------------ -->
-        <div class="hero-form-col">
-          <!-- CONNECT EXISTING SABINSKY ORTHODONTICS FORM ENDPOINT HERE
-               Set data-endpoint (or action) to the live form handler.
-               Optional: data-thank-you-url to redirect after a verified success.
-               Optional: data-conversion-send-to="AW-XXXXXXXXX/XXXXXXXX" for Google Ads
-               (only fires after a successful submission response). -->
-          <form id="consult-form" class="lead-form glass-card" method="post" action="" data-endpoint="" data-thank-you-url="" data-conversion-send-to="" novalidate>
-            <div class="form-head">
-              <p class="form-kicker">Free Consultation <span aria-hidden="true">·</span> $125 Value</p>
-              <h2 id="form-title">Request Your Free Consultation</h2>
-              <p class="form-sub">Claim $1,025 in total savings. Our team will contact you to schedule at Princeton or Hillsborough.</p>
+        <div class="hero-media">
+          <div class="hero-media-frame">
+            <picture>
+              <source srcset="assets/img/invisalign-braces.webp" type="image/webp">
+              <img src="assets/img/invisalign-braces.jpg" width="624" height="403" fetchpriority="high" decoding="async" alt="Two smiling patients: one holding an Invisalign clear aligner, one wearing braces">
+            </picture>
+            <div class="hero-floats">
+              <div class="hero-float hero-float-a"><strong>$650 OFF</strong><span>Invisalign<sup>®</sup> or Braces</span></div>
+              <div class="hero-float hero-float-b"><strong>FREE</strong><span>Teeth Whitening + Consultation</span></div>
             </div>
-
-            <div class="form-grid">
-              <div class="field">
-                <label for="first_name">First Name <span class="req" aria-hidden="true">*</span></label>
-                <input id="first_name" name="first_name" type="text" autocomplete="given-name" required>
-              </div>
-              <div class="field">
-                <label for="last_name">Last Name <span class="req" aria-hidden="true">*</span></label>
-                <input id="last_name" name="last_name" type="text" autocomplete="family-name" required>
-              </div>
-              <div class="field">
-                <label for="phone">Phone <span class="req" aria-hidden="true">*</span></label>
-                <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required>
-              </div>
-              <div class="field">
-                <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
-                <input id="email" name="email" type="email" inputmode="email" autocomplete="email" required>
-              </div>
-
-              <fieldset class="field field-full treatment-field">
-                <legend>Treatment Interest <span class="req" aria-hidden="true">*</span></legend>
-                <div class="pill-group" role="radiogroup" aria-label="Treatment interest">
-                  <label class="pill"><input type="radio" name="treatment_interest" value="Invisalign" required><span>Invisalign<sup>®</sup></span></label>
-                  <label class="pill"><input type="radio" name="treatment_interest" value="Braces" required><span>Braces</span></label>
-                  <label class="pill"><input type="radio" name="treatment_interest" value="Not Sure Yet" required><span>Not Sure Yet</span></label>
-                </div>
-              </fieldset>
-
-              <div class="field">
-                <label for="preferred_location">Preferred Location <span class="req" aria-hidden="true">*</span></label>
-                <select id="preferred_location" name="preferred_location" required>
-                  <option value="" selected disabled>Select a location</option>
-                  <option value="Princeton">Princeton</option>
-                  <option value="Hillsborough">Hillsborough</option>
-                </select>
-              </div>
-              <div class="field">
-                <label for="hear_about">How Did You Hear About Us? <span class="req" aria-hidden="true">*</span></label>
-                <select id="hear_about" name="hear_about" required>
-                  <option value="" selected disabled>Select one</option>
-                  <option value="Google">Google</option>
-                  <option value="Social Media">Social Media</option>
-                  <option value="Friend or Family">Friend or Family</option>
-                  <option value="Dentist Referral">Dentist Referral</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-
-              <div class="field field-full">
-                <label for="message">How Can We Help You? <span class="req" aria-hidden="true">*</span></label>
-                <textarea id="message" name="message" rows="3" required placeholder="Tell us a little about your smile goals"></textarea>
-              </div>
-
-              <div class="field field-full consent">
-                <label class="checkbox">
-                  <input type="checkbox" id="consent" name="consent" value="yes" required>
-                  <span>I agree to <a href="https://sabinskyorthodontics.com/privacy-policy/" target="_blank" rel="noopener">terms &amp; conditions</a> provided by the company. By providing my phone number, I agree to receive text messages from the business. <span class="req" aria-hidden="true">*</span></span>
-                </label>
-              </div>
-            </div>
-
-            <!-- Google Ads / PPC attribution (populated by assets/js/main.js) -->
-            <input type="hidden" name="utm_source" value="">
-            <input type="hidden" name="utm_medium" value="">
-            <input type="hidden" name="utm_campaign" value="">
-            <input type="hidden" name="utm_term" value="">
-            <input type="hidden" name="utm_content" value="">
-            <input type="hidden" name="gclid" value="">
-            <input type="hidden" name="gbraid" value="">
-            <input type="hidden" name="wbraid" value="">
-            <input type="hidden" name="landing_page" value="sabinsky-orthodontics-offer">
-            <input type="hidden" name="offer" value="$650 off Invisalign or Braces + Free Teeth Whitening ($250) + Free Consultation ($125) = $1,025 total savings">
-            <input type="hidden" name="page_url" value="">
-            <input type="hidden" name="referrer" value="">
-            <!-- Honeypot: leave empty -->
-            <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-
-            <button id="form-submit" class="btn btn-gold btn-lg btn-block" type="submit" data-conversion-type="lead">Request My Free Consultation</button>
-            <p class="form-note">No obligation. Offer exclusions apply.</p>
-            <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
-          </form>
+          </div>
         </div>
       </div>
     </section>
@@ -248,7 +165,7 @@
         </div>
         <div class="total-bar">
           <p class="total-text">Total Savings <strong>= $1,025</strong></p>
-          <a id="offer-consultation" class="btn btn-gold" href="#consult-form" data-conversion-type="lead" data-scroll-form>Claim My $1,025 Savings</a>
+          <a id="offer-consultation" class="btn btn-gold" href="#consultation" data-conversion-type="lead" data-open-form>Claim My $1,025 Savings</a>
         </div>
       </div>
     </section>
@@ -299,7 +216,7 @@
                 <li>Free teeth whitening ($250 value)</li>
                 <li>Free consultation ($125 value)</li>
               </ul>
-              <a id="invisalign-interest" class="btn btn-primary btn-block" href="#consult-form" data-conversion-type="lead" data-treatment="invisalign" data-scroll-form>I'm Interested in Invisalign</a>
+              <a id="invisalign-interest" class="btn btn-primary btn-block" href="#consultation" data-conversion-type="lead" data-treatment="invisalign" data-open-form>I'm Interested in Invisalign</a>
             </div>
           </article>
 
@@ -319,7 +236,7 @@
                 <li>Free teeth whitening ($250 value)</li>
                 <li>Free consultation ($125 value)</li>
               </ul>
-              <a id="braces-interest" class="btn btn-primary btn-block" href="#consult-form" data-conversion-type="lead" data-treatment="braces" data-scroll-form>I'm Interested in Braces</a>
+              <a id="braces-interest" class="btn btn-primary btn-block" href="#consultation" data-conversion-type="lead" data-treatment="braces" data-open-form>I'm Interested in Braces</a>
             </div>
           </article>
         </div>
@@ -350,17 +267,17 @@
               <li><strong>Personalized plan</strong> tailored to your dental structure and aesthetic goals</li>
             </ul>
             <p class="detail-note">Treatment time varies with the complexity of each case. Dr. Sabinsky performs a thorough clinical examination before establishing an accurate estimate.</p>
-            <a id="invisalign-consultation" class="btn btn-gold" href="#consult-form" data-conversion-type="lead" data-treatment="invisalign" data-scroll-form>Request a Free Invisalign Consultation</a>
+            <a id="invisalign-consultation" class="btn btn-gold" href="#consultation" data-conversion-type="lead" data-treatment="invisalign" data-open-form>Request a Free Invisalign Consultation</a>
           </div>
         </div>
       </section>
 
       <section class="section treatment-detail braces-detail" id="braces" aria-labelledby="braces-title">
-        <div class="container detail-grid detail-grid-reverse">
+        <div class="container detail-grid detail-grid-reverse detail-grid-portrait">
           <div class="detail-media">
             <picture>
-              <source srcset="assets/img/braces-patient.webp" type="image/webp">
-              <img src="assets/img/braces-patient.jpg" width="268" height="403" loading="lazy" decoding="async" alt="Smiling patient wearing braces outdoors">
+              <source srcset="assets/img/braces-patient-lg.webp" type="image/webp">
+              <img src="assets/img/braces-patient-lg.jpg" width="536" height="806" loading="lazy" decoding="async" alt="Smiling patient wearing braces outdoors">
             </picture>
           </div>
           <div class="detail-copy">
@@ -374,7 +291,7 @@
               <li><strong>Personalized plan</strong> using Dr. Sabinsky's own techniques</li>
             </ul>
             <p class="detail-note">Treatment time varies with the complexity of each case. Dr. Sabinsky performs a thorough clinical examination before establishing an accurate estimate.</p>
-            <a id="braces-consultation" class="btn btn-gold" href="#consult-form" data-conversion-type="lead" data-treatment="braces" data-scroll-form>Request a Free Braces Consultation</a>
+            <a id="braces-consultation" class="btn btn-gold" href="#consultation" data-conversion-type="lead" data-treatment="braces" data-open-form>Request a Free Braces Consultation</a>
           </div>
         </div>
       </section>
@@ -465,7 +382,7 @@
           <p class="cta-band-breakdown">$650 Off Full Treatment <span aria-hidden="true">+</span> Free Teeth Whitening <span aria-hidden="true">+</span> Free Consultation</p>
         </div>
         <div class="cta-band-actions">
-          <a id="midpage-offer" class="btn btn-gold btn-lg" href="#consult-form" data-conversion-type="lead" data-scroll-form>Request a Free Consultation</a>
+          <a id="midpage-offer" class="btn btn-gold btn-lg" href="#consultation" data-conversion-type="lead" data-open-form>Request a Free Consultation</a>
           <a id="midpage-call" class="btn btn-ghost btn-lg" href="tel:6402033896" data-conversion-type="phone">Call (640) 203-3896</a>
         </div>
         <details class="exclusions-details">
@@ -552,7 +469,7 @@
             <li>New Jersey Dental Association</li>
             <li>Middle Atlantic Society of Orthodontists</li>
           </ul>
-          <a id="doctor-consultation" class="btn btn-gold" href="#consult-form" data-conversion-type="lead" data-scroll-form>Request a Free Consultation with Dr. Sabinsky</a>
+          <a id="doctor-consultation" class="btn btn-gold" href="#consultation" data-conversion-type="lead" data-open-form>Request a Free Consultation with Dr. Sabinsky</a>
         </div>
       </div>
     </section>
@@ -638,8 +555,134 @@
           </div>
         </div>
         <div class="faq-cta">
-          <a id="faq-consultation" class="btn btn-gold" href="#consult-form" data-conversion-type="lead" data-scroll-form>Request a Free Consultation</a>
+          <a id="faq-consultation" class="btn btn-gold" href="#consultation" data-conversion-type="lead" data-open-form>Request a Free Consultation</a>
           <a id="faq-call" class="btn btn-outline" href="tel:6402033896" data-conversion-type="phone">Call (640) 203-3896</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         14. CONSULTATION FORM SECTION
+         The same markup inside #lead-form-slot is cloned into the popup
+         (#consult-dialog) by assets/js/main.js, so replace it ONCE here.
+         ============================================================ -->
+    <section class="section form-section" id="consultation" aria-labelledby="form-title">
+      <div class="container form-section-grid">
+        <div class="form-section-copy">
+          <p class="kicker">Free Consultation <span aria-hidden="true">·</span> $125 Value</p>
+          <h2 id="form-title">Ready to Claim Your $1,025 in Savings?</h2>
+          <p>Tell us a little about yourself and whether you are leaning toward Invisalign<sup>®</sup> or braces. Our team will reach out to schedule your free consultation with Dr. Sabinsky in Princeton or Hillsborough.</p>
+          <ul class="check-list">
+            <li><strong>$650 off</strong> full Invisalign<sup>®</sup> or full braces treatment</li>
+            <li><strong>Free teeth whitening</strong> ($250 value)</li>
+            <li><strong>Free consultation</strong> ($125 value)</li>
+          </ul>
+          <p class="form-section-call">Prefer to talk? <a id="form-section-call" href="tel:6402033896" data-conversion-type="phone">Call (640) 203-3896</a></p>
+          <div class="disclaimer" aria-label="Offer exclusions">
+            <p class="disclaimer-title">*Exclusions:</p>
+            <ol>
+              <li>Cannot be combined with certain insurance plans.</li>
+              <li>Only valid for full braces and full Invisalign<sup>®</sup> treatment.</li>
+              <li>Cannot be combined with other offers.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="form-card glass-card">
+          <!-- ============================================================
+               PLACEHOLDER FORM — REPLACE WITH THE GOHIGHLEVEL (GHL) FORM EMBED
+               Paste the GHL embed code inside #lead-form-slot. The popup
+               receives an identical copy automatically.
+               CONNECT EXISTING SABINSKY ORTHODONTICS FORM ENDPOINT HERE
+               ============================================================ -->
+          <div id="lead-form-slot">
+            <form id="consult-form" class="lead-form" method="post" action="" data-endpoint="" data-thank-you-url="" data-conversion-send-to="" novalidate>
+              <div class="form-head">
+                <p class="form-kicker">Free Consultation <span aria-hidden="true">·</span> $125 Value</p>
+                <h3 id="consult-form-title" class="form-title">Request Your Free Consultation</h3>
+                <p class="form-sub">Claim $1,025 in total savings: $650 off Invisalign<sup>®</sup> or braces, free teeth whitening, and a free consultation. Our team will contact you to schedule at Princeton or Hillsborough.</p>
+              </div>
+
+              <div class="form-grid">
+                <div class="field">
+                  <label for="first_name">First Name <span class="req" aria-hidden="true">*</span></label>
+                  <input id="first_name" name="first_name" type="text" autocomplete="given-name" required>
+                </div>
+                <div class="field">
+                  <label for="last_name">Last Name <span class="req" aria-hidden="true">*</span></label>
+                  <input id="last_name" name="last_name" type="text" autocomplete="family-name" required>
+                </div>
+                <div class="field">
+                  <label for="phone">Phone <span class="req" aria-hidden="true">*</span></label>
+                  <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required>
+                </div>
+                <div class="field">
+                  <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
+                  <input id="email" name="email" type="email" inputmode="email" autocomplete="email" required>
+                </div>
+
+                <fieldset class="field field-full treatment-field">
+                  <legend>Treatment Interest <span class="req" aria-hidden="true">*</span></legend>
+                  <div class="pill-group" role="radiogroup" aria-label="Treatment interest">
+                    <label class="pill"><input type="radio" name="treatment_interest" value="Invisalign" required><span>Invisalign<sup>®</sup></span></label>
+                    <label class="pill"><input type="radio" name="treatment_interest" value="Braces" required><span>Braces</span></label>
+                    <label class="pill"><input type="radio" name="treatment_interest" value="Not Sure Yet" required><span>Not Sure Yet</span></label>
+                  </div>
+                </fieldset>
+
+                <div class="field">
+                  <label for="preferred_location">Preferred Location <span class="req" aria-hidden="true">*</span></label>
+                  <select id="preferred_location" name="preferred_location" required>
+                    <option value="" selected disabled>Select a location</option>
+                    <option value="Princeton">Princeton</option>
+                    <option value="Hillsborough">Hillsborough</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="hear_about">How Did You Hear About Us? <span class="req" aria-hidden="true">*</span></label>
+                  <select id="hear_about" name="hear_about" required>
+                    <option value="" selected disabled>Select one</option>
+                    <option value="Google">Google</option>
+                    <option value="Social Media">Social Media</option>
+                    <option value="Friend or Family">Friend or Family</option>
+                    <option value="Dentist Referral">Dentist Referral</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+
+                <div class="field field-full">
+                  <label for="message">How Can We Help You? <span class="req" aria-hidden="true">*</span></label>
+                  <textarea id="message" name="message" rows="3" required placeholder="Tell us a little about your smile goals"></textarea>
+                </div>
+
+                <div class="field field-full consent">
+                  <label class="checkbox">
+                    <input type="checkbox" id="consent" name="consent" value="yes" required>
+                    <span>I agree to <a href="https://sabinskyorthodontics.com/privacy-policy/" target="_blank" rel="noopener">terms &amp; conditions</a> provided by the company. By providing my phone number, I agree to receive text messages from the business. <span class="req" aria-hidden="true">*</span></span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Google Ads / PPC attribution (populated by assets/js/main.js) -->
+              <input type="hidden" name="utm_source" value="">
+              <input type="hidden" name="utm_medium" value="">
+              <input type="hidden" name="utm_campaign" value="">
+              <input type="hidden" name="utm_term" value="">
+              <input type="hidden" name="utm_content" value="">
+              <input type="hidden" name="gclid" value="">
+              <input type="hidden" name="gbraid" value="">
+              <input type="hidden" name="wbraid" value="">
+              <input type="hidden" name="landing_page" value="sabinsky-orthodontics-offer">
+              <input type="hidden" name="offer" value="$650 off Invisalign or Braces + Free Teeth Whitening ($250) + Free Consultation ($125) = $1,025 total savings">
+              <input type="hidden" name="page_url" value="">
+              <input type="hidden" name="referrer" value="">
+              <!-- Honeypot: leave empty -->
+              <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+              <button id="form-submit" class="btn btn-gold btn-lg btn-block" type="submit" data-conversion-type="lead">Request My Free Consultation</button>
+              <p class="form-note">No obligation. Offer exclusions apply.</p>
+              <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+            </form>
+          </div>
         </div>
       </div>
     </section>
@@ -672,7 +715,7 @@
                 <div><dt>Wednesday</dt><dd>12:00 PM – 7:00 PM</dd></div>
                 <div><dt>Friday</dt><dd>10:00 AM – 5:00 PM</dd></div>
               </dl>
-              <a id="princeton-consultation" class="btn btn-primary" href="#consult-form" data-conversion-type="lead" data-location="princeton" data-scroll-form>Request a Free Consultation in Princeton</a>
+              <a id="princeton-consultation" class="btn btn-primary" href="#consultation" data-conversion-type="lead" data-location="princeton" data-open-form>Request a Free Consultation in Princeton</a>
             </div>
             <div class="map-wrap">
               <iframe
@@ -704,7 +747,7 @@
                 <div><dt>Monday</dt><dd>12:00 PM – 7:00 PM</dd></div>
                 <div><dt>Thursday</dt><dd>12:00 PM – 7:00 PM</dd></div>
               </dl>
-              <a id="hillsborough-consultation" class="btn btn-primary" href="#consult-form" data-conversion-type="lead" data-location="hillsborough" data-scroll-form>Request a Free Consultation in Hillsborough</a>
+              <a id="hillsborough-consultation" class="btn btn-primary" href="#consultation" data-conversion-type="lead" data-location="hillsborough" data-open-form>Request a Free Consultation in Hillsborough</a>
             </div>
             <div class="map-wrap">
               <iframe
@@ -737,7 +780,7 @@
           <li><span class="plus" aria-hidden="true">PLUS</span> <strong>Free Consultation</strong> ($125 Value)</li>
         </ul>
         <div class="cta-row center">
-          <a id="final-consultation" class="btn btn-gold btn-lg" href="#consult-form" data-conversion-type="lead" data-scroll-form>Request a Free Consultation</a>
+          <a id="final-consultation" class="btn btn-gold btn-lg" href="#consultation" data-conversion-type="lead" data-open-form>Request a Free Consultation</a>
           <a id="final-call" class="btn btn-ghost btn-lg" href="tel:6402033896" data-conversion-type="phone">Call (640) 203-3896</a>
         </div>
         <div class="disclaimer light" aria-label="Offer exclusions">
@@ -765,6 +808,19 @@
   </footer>
 
   <!-- ============================================================
+       CONSULTATION POPUP (native <dialog>; form cloned from #lead-form-slot)
+       ============================================================ -->
+  <dialog id="consult-dialog" class="consult-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-panel glass-card">
+      <button type="button" class="dialog-close" id="dialog-close" aria-label="Close">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7l1.4-1.4 6.3 6.3 6.3-6.3z"/></svg>
+      </button>
+      <p class="dialog-offer" id="dialog-title"><strong>Save $1,025</strong> · $650 off + Free Whitening + Free Consultation</p>
+      <div id="dialog-form-slot"></div>
+    </div>
+  </dialog>
+
+  <!-- ============================================================
        MOBILE STICKY CTA BAR
        ============================================================ -->
   <div class="mobile-bar glass" id="mobile-bar" aria-label="Quick actions">
@@ -772,7 +828,7 @@
       <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8Z"/></svg>
       Call Now
     </a>
-    <a id="mobile-consultation" class="mobile-bar-btn lead" href="#consult-form" data-conversion-type="lead" data-scroll-form>Free Consultation</a>
+    <a id="mobile-consultation" class="mobile-bar-btn lead" href="#consultation" data-conversion-type="lead" data-open-form>Free Consultation</a>
   </div>
 
   <script src="assets/js/main.js" defer></script>

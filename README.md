@@ -11,10 +11,16 @@ assets/js/main.js       # attribution capture, PPC context, CTA preselection, FA
 assets/img/             # supplied logo, doctor photo, approved campaign imagery (optimized WebP + fallbacks)
 ```
 
-## Connect the lead form
+## Lead form: placeholder now, GoHighLevel (GHL) later
 
-The form (`#consult-form`) is **not wired to a backend yet** and will never fake a success.
-Search `index.html` for `CONNECT EXISTING SABINSKY ORTHODONTICS FORM ENDPOINT HERE` and set:
+The page ships with a **placeholder form** so the layout and popup can be reviewed. It is not wired to a backend and never fakes a lead.
+
+* The form markup lives once, inside `#lead-form-slot` in the `#consultation` section near the bottom of the page.
+* Every "Request a Free Consultation" CTA (header, hero, treatment cards, doctor, FAQ, locations, final CTA, mobile bar) opens a **popup** (`<dialog id="consult-dialog">`). `main.js` clones whatever is inside `#lead-form-slot` into the popup at load, prefixing ids with `modal-`, so both copies stay valid.
+* **To go live:** replace the contents of `#lead-form-slot` with the GHL form embed. The popup picks it up automatically (any `<script>` in the embed is re-executed for the clone). If GHL provides its own popup/trigger, point the CTAs at it instead of `data-open-form`.
+* Treatment cards and location CTAs preselect **Treatment Interest** and **Preferred Location** in both copies. Keep those field names (`treatment_interest`, `preferred_location`) in the GHL form if you want that behaviour to carry over.
+
+If you keep the built-in form instead, search `index.html` for `CONNECT EXISTING SABINSKY ORTHODONTICS FORM ENDPOINT HERE` and set:
 
 | Attribute on `#consult-form` | Purpose |
 | --- | --- |
@@ -22,7 +28,7 @@ Search `index.html` for `CONNECT EXISTING SABINSKY ORTHODONTICS FORM ENDPOINT HE
 | `data-thank-you-url` | Optional redirect after a verified success. |
 | `data-conversion-send-to` | Optional Google Ads `AW-XXXX/XXXX` label; `gtag('event','conversion')` fires only after a 2xx response. |
 
-Until an endpoint is set, submitting shows a message asking the visitor to call (640) 203-3896.
+Until an endpoint is set, submitting shows a placeholder notice asking the visitor to call (640) 203-3896.
 
 ### Fields posted
 
@@ -31,7 +37,7 @@ Until an endpoint is set, submitting shows a message asking the visitor to call 
 ## Tracking hooks
 
 * Every CTA has a unique `id` and `data-conversion-type="lead|phone"` (plus `data-treatment` / `data-location` where relevant).
-* Clicks push `cta_click` / `phone_click` to `window.dataLayer`.
+* Clicks push `cta_click` / `phone_click` to `window.dataLayer`; opening the popup pushes `consult_popup_open`.
 * A verified submission pushes `generate_lead` to `dataLayer` and dispatches a `sabinsky:lead` DOM event. **Nothing fires on a mere submit click.**
 
 ## PPC personalization (one page)
@@ -39,6 +45,10 @@ Until an endpoint is set, submitting shows a message asking the visitor to call 
 `utm_campaign`, `utm_term` or `utm_content` containing *invisalign / aligner* → Invisalign card first, Invisalign preselected, `<html data-treatment-context="invisalign">`.
 Containing *braces / bracket* → Braces card and section first, Braces preselected, `data-treatment-context="braces"`.
 Otherwise the balanced default. `?treatment=braces|invisalign` and `?location=princeton|hillsborough` are also honoured.
+
+## Motion
+
+Sections reveal on scroll (IntersectionObserver, staggered siblings) and lazy images fade in on load. The hero never animates so the offer is visible instantly. Everything respects `prefers-reduced-motion`.
 
 ## Local preview
 
